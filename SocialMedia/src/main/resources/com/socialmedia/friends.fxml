@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.socialmedia.Friends">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SocialMedia.src.main.java.com.socialmedia.Friends">
    <children>
       <SplitPane dividerPositions="0.7189171122994651" layoutY="45.0" prefHeight="355.0" prefWidth="600.0">
         <items>

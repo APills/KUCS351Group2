@@ -1,4 +1,4 @@
-package com.socialmedia;
+package SocialMedia.src.main.java.com.socialmedia;
 
 import java.net.URL;
 import javafx.scene.control.ListView;
