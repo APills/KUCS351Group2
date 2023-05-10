@@ -7,19 +7,19 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="166.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="friendRequestPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="166.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="friendRequestProfilePicture" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pngassets/temp_logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="96.0" layoutY="15.0" text="Full Name">
+      <Label fx:id="friendRequestFullName" layoutX="96.0" layoutY="15.0" text="Full Name">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
       </Label>
-      <Label layoutX="96.0" layoutY="35.0" text="username">
+      <Label fx:id="friendRequestUsername" layoutX="96.0" layoutY="35.0" text="username">
          <font>
             <Font size="10.0" />
          </font>

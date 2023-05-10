@@ -7,20 +7,20 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="0.0" prefHeight="86.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="friendsListPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="0.0" prefHeight="86.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="86.0" fitWidth="86.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="friendsListProfilePicture" fitHeight="86.0" fitWidth="86.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pngassets/temp_logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="100.0" layoutY="23.0" text="username" />
-      <Label alignment="TOP_LEFT" layoutX="100.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" text="Full Name">
+      <Label fx:id="friendsListUsername" layoutX="100.0" layoutY="23.0" text="username" />
+      <Label fx:id="friendsListFullName" alignment="TOP_LEFT" layoutX="100.0" layoutY="6.0" nodeOrientation="LEFT_TO_RIGHT" text="Full Name">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="100.0" layoutY="48.0" text="Description">
+      <Label fx:id="friendsListDescription" layoutX="100.0" layoutY="48.0" text="Description">
          <font>
             <Font size="10.0" />
          </font>

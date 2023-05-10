@@ -1,8 +1,8 @@
-module com.example.demo {
+module com.socialmedia {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.CS351 to javafx.fxml;
-    exports com.example.CS351;
+    opens com.socialmedia to javafx.fxml;
+    exports com.socialmedia;
 }
