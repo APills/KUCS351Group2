@@ -1,6 +1,39 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+.idea/libraries/lib.xml
+.idea/misc.xml
+.idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+KUCS351Group2.iml
 SocialMedia/.idea/misc.xml
 SocialMedia/.idea/vcs.xml
 SocialMedia/.idea/workspace.xml
+src/Main.java
