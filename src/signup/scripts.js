@@ -1,64 +1,73 @@
 document
-  .getElementById("signupForm")
-  .addEventListener("submit", function (event) {
-    // Prevent the form from submitting normally
-    event.preventDefault();
+    .getElementById("signupForm")
+    .addEventListener("submit", function (event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
 
-    const fullName = document.getElementById("fullName").value;
-    const username = document.getElementById("username").value;
-    const description = document.getElementById("description").value;
-    const password = document.getElementById("password").value;
+        const fullName = document.getElementById("fullName");
+        const username = document.getElementById("username");
+        const description = document.getElementById("description");
+        const password = document.getElementById("password");
 
-    const formData = {
-      full_name: fullName,
-      username: username,
-      description: description,
-      password: password,
-    };
+        const formData = {
+            full_name: fullName.value,
+            username: username.value,
+            description: description.value,
+            password: password.value,
+        };
 
-    // Now you can send the form data to your server
-    fetch("http://localhost:8000/api/v1/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        accept: "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          if (response.status === 409) {
-            // username is already taken
-            throw new Error(
-              "Username is already taken."
-            );
-          } else {
-            throw new Error("Error: " + response.statusText);
-          }
-        }
-        return response.json();
-      })
-      .then((responseJson) => {
-        // Handle the response
-        console.log(responseJson);
-      })
-      .catch((error) => {
-        // Handle the error
-        console.error("Error:", error);
+        // Now you can send the form data to your server
+        fetch("http://localhost:8000/api/v1/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                accept: "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    if (response.status === 409) {
+                        // username is already taken
+                        throw new Error("Username is already taken.");
+                    } else {
+                        throw new Error("Error: " + response.statusText);
+                    }
+                }
+                return response.json();
+            })
+            .then((responseJson) => {
+                // Clear the form
+                fullName.value = "";
+                username.value = "";
+                description.value = "";
+                password.value = "";
 
-        // Remove existing error message, if any
-        const oldErrorMessageElement = document.getElementById("errorMessage");
-        if (oldErrorMessageElement) {
-          oldErrorMessageElement.remove();
-        }
+                // Handle the response
+                console.log(responseJson);
 
-        // Create an error message element
-        const errorMessageElement = document.createElement("p");
-        errorMessageElement.id = "errorMessage";
-        errorMessageElement.style.color = "red";
-        errorMessageElement.textContent = error.message;
+                // Redirect to the conversations page
+                window.location.href = "../conversations/page.html";
+            })
+            .catch((error) => {
+                // Handle the error
+                console.error("Error:", error);
 
-        // Add the error message element to the form
-        document.getElementById("signupForm").appendChild(errorMessageElement);
-      });
-  });
+                // Remove existing message, if any
+                const oldMessageElement = document.getElementById("message");
+                if (oldMessageElement) {
+                    oldMessageElement.remove();
+                }
+
+                // Create an error message element
+                const messageElement = document.createElement("p");
+                messageElement.id = "message";
+                messageElement.style.color = "red";
+                messageElement.textContent = error.message;
+
+                // Add the error message element to the form
+                document
+                    .getElementById("signupForm")
+                    .appendChild(messageElement);
+            });
+    });
