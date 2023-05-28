@@ -19,6 +19,7 @@ body {
     width: 30%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* added this line */
     border-right: 1px solid #ddd;
 }
 
@@ -27,8 +28,8 @@ body {
     padding: 10px;
 }
 
-.create-button {
-    margin-top: 10px;
+.new-button {
+    margin: 10px;
     padding: 10px;
     border-radius: 5px;
     border: none;

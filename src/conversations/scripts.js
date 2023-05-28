@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => console.error("Error:", error));
 
     document
-        .getElementById("createButton")
-        .addEventListener("click", onCreateButtonClick);
+        .getElementById("newButton")
+        .addEventListener("click", onNewButtonClick);
 
     document
         .getElementById("messageForm")
@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    addMessageToCurrentConversation(data);
+                    if (currentConversation) {
+                        addMessageToCurrentConversation(data);
+                    }
                 })
                 .catch((error) => console.error("Error:", error));
         });
@@ -95,6 +97,6 @@ function addMessageToCurrentConversation(message) {
     loadMessages(currentConversation.messages);
 }
 
-function onCreateButtonClick() {
+function onNewButtonClick() {
     window.location.href = "../search/page.html";
 }
