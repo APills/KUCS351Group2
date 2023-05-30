@@ -6,20 +6,15 @@
     </head>
     <body>
         <div id="search-page" class="search-page">
-            <div class="current-conversation">
-                <div id="messages-list" class="messages-list">
-                    <!-- Messages will be loaded here -->
+            <div class="search-section">
+                <div class="search-criteria">
+                    <input type="text" id="full_name" placeholder="Full name" />
+                    <input type="text" id="username" placeholder="Username" />
+                    <textarea id="description" placeholder="Description"></textarea>
                 </div>
-                <form id="messageForm" class="message-form">
-                    <input
-                        type="text"
-                        id="message-input"
-                        name="message"
-                        placeholder="Send a message."
-                        required
-                    />
-                    <button type="submit">Send</button>
-                </form>
+                <div id="search-list" class="search-list">
+                    <!-- Search results will be loaded here -->
+                </div>
             </div>
         </div>
         <script src="scripts.js"></script>
