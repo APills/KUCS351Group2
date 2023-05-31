@@ -17,11 +17,19 @@ body {
     justify-content: space-between;
 }
 
-.search-section {
+.search-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: auto;
+}
+
+.search-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-right: 1px solid #ddd;
 }
 
@@ -55,4 +63,36 @@ body {
 
 .search-item:hover {
     background-color: #eee;
+}
+
+.search-item.selected {
+    background-color: #ddd;
+}
+
+.message-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#send-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #007BFF;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #0069d9;
 }

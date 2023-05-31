@@ -6,15 +6,21 @@
     </head>
     <body>
         <div id="search-page" class="search-page">
-            <div class="search-section">
-                <div class="search-criteria">
-                    <input type="text" id="full_name" placeholder="Full name" />
-                    <input type="text" id="username" placeholder="Username" />
-                    <textarea id="description" placeholder="Description"></textarea>
+            <div class="search-container">
+                <div class="search-section">
+                    <div class="search-criteria">
+                        <input type="text" id="full_name" placeholder="Full name" />
+                        <input type="text" id="username" placeholder="Username" />
+                        <textarea id="description" placeholder="Description"></textarea>
+                    </div>
+                    <div id="search-list" class="search-list">
+                        <!-- Search results will be loaded here -->
+                    </div>
                 </div>
-                <div id="search-list" class="search-list">
-                    <!-- Search results will be loaded here -->
-                </div>
+            </div>
+            <div class="message-field">
+                <input type="text" id="message-input" placeholder="Send a message..." disabled />
+                <button id="send-button" disabled>Send</button>
             </div>
         </div>
         <script src="scripts.js"></script>
