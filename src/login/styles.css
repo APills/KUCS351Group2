@@ -23,6 +23,7 @@ body {
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    box-sizing: border-box;
 }
 
 .login-form button {
