@@ -19,13 +19,20 @@ body {
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* added this line */
     border-right: 1px solid #ddd;
+    height: 100%;
+}
+
+.conversations-title {
+    font-size: 31px;
+    font-weight: bold;
+    padding: 10px;
 }
 
 .conversations-list {
     overflow-y: scroll;
     padding: 10px;
+    flex-grow: 1;
 }
 
 .new-button {
@@ -34,7 +41,7 @@ body {
     border-radius: 5px;
     border: none;
     color: #fff;
-    background-color: #007BFF;
+    background-color: #007bff;
     cursor: pointer;
 }
 
@@ -44,7 +51,7 @@ body {
 }
 
 .conversation-item.active {
-    background-color: #007BFF;
+    background-color: #007bff;
     color: #fff;
 }
 
@@ -72,7 +79,7 @@ body {
 
 .message.left {
     align-self: flex-start;
-    background-color: #007BFF;
+    background-color: #007bff;
 }
 
 .message.right {
@@ -100,6 +107,6 @@ body {
     border-radius: 5px;
     border: none;
     color: #fff;
-    background-color: #007BFF;
+    background-color: #007bff;
     cursor: pointer;
 }
