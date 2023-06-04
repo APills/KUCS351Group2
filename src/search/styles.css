@@ -33,6 +33,13 @@ body {
     border-right: 1px solid #ddd;
 }
 
+.search-title {
+    font-size: 40px;
+    text-align: center;
+    color: #333;
+    padding: 10px 0;
+}
+
 .search-criteria {
     width: 100%;
     display: flex;
@@ -87,8 +94,8 @@ body {
 #send-button {
     padding: 10px 20px;
     border-radius: 5px;
-    border: 1px solid #007BFF;
-    background-color: #007BFF;
+    border: 1px solid #007bff;
+    background-color: #007bff;
     color: #fff;
     cursor: pointer;
 }
