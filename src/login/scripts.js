@@ -16,7 +16,7 @@ document
         formData.append("client_secret", "");
 
         // Now you can send 'username' and 'password' to your server
-        fetch("http://localhost:8000/api/v1/token", {
+        fetch("http://20.106.172.11:80/api/v1/token", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -28,14 +28,19 @@ document
                 if (response.ok) {
                     return response.json();
                 } else {
-                    throw new Error("Error: " + response.statusText);
+                    // If the response status is 401 (Unauthorized), throw a custom error message
+                    if (response.status === 401) {
+                        throw new Error("Invalid username or password");
+                    } else {
+                        throw new Error("Error: " + response.statusText);
+                    }
                 }
             })
             .then((responseJson) => {
                 // Store the received access token
                 localStorage.setItem("access_token", responseJson.access_token);
                 // Fetch the current user's details
-                fetch("http://localhost:8000/api/v1/users/me", {
+                fetch("http://20.106.172.11:80/api/v1/users/me", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
@@ -61,12 +66,14 @@ document
                         window.location.href = "../conversations/page.html";
                     })
                     .catch((error) => {
-                        // Handle the error
                         console.error("Error:", error);
                     });
             })
             .catch((error) => {
-                // Handle the error
+                const errorMessageElement =
+                    document.getElementById("error-message");
+                errorMessageElement.innerText = error.message;
+                errorMessageElement.style.display = "block";
                 console.error("Error:", error);
             });
     });

@@ -47,7 +47,7 @@ function fetchUsers() {
 
     const token = localStorage.getItem("access_token");
 
-    fetch(`http://localhost:8000/api/v1/users?${params.toString()}`, {
+    fetch(`http://20.106.172.11:80/api/v1/users?${params.toString()}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -109,7 +109,7 @@ document.getElementById("send-button").addEventListener("click", () => {
 
     if (content && otherUserId) {
         const token = localStorage.getItem("access_token");
-        fetch("http://localhost:8000/api/v1/messages?return_results=true", {
+        fetch("http://20.106.172.11:80/api/v1/messages?return_results=true", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

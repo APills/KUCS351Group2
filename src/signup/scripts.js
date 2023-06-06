@@ -17,7 +17,7 @@ document
         };
 
         // Now you can send the form data to your server
-        fetch("http://localhost:8000/api/v1/users", {
+        fetch("http://20.106.172.11:80/api/v1/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -81,7 +81,7 @@ function login(username, password) {
     formData.append("client_secret", "");
 
     // Now you can send 'username' and 'password' to your server
-    fetch("http://localhost:8000/api/v1/token", {
+    fetch("http://20.106.172.11:80/api/v1/token", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -100,7 +100,7 @@ function login(username, password) {
             // Store the received access token
             localStorage.setItem("access_token", responseJson.access_token);
             // Fetch the current user's details
-            fetch("http://localhost:8000/api/v1/users/me", {
+            fetch("http://20.106.172.11:80/api/v1/users/me", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const messageForm = document.getElementById("messageForm");
     const messageInput = document.getElementById("message-input");
 
-    fetch("http://localhost:8000/api/v1/conversations", {
+    fetch("http://20.106.172.11:80/api/v1/conversations", {
         method: "GET",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -87,18 +87,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const targetUserId = otherUserId;
             const token = localStorage.getItem("access_token");
-            fetch("http://localhost:8000/api/v1/messages?return_results=true", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    accept: "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify({
-                    target_user_id: targetUserId,
-                    content: content,
-                }),
-            })
+            fetch(
+                "http://20.106.172.11:80/api/v1/messages?return_results=true",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        accept: "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                    body: JSON.stringify({
+                        target_user_id: targetUserId,
+                        content: content,
+                    }),
+                }
+            )
                 .then((response) => response.json())
                 .then((data) => {
                     if (currentConversation) {
